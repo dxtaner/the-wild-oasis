@@ -1,0 +1,75 @@
+.cabins-page {
+  padding: 30px;
+  background: #0b1220;
+  min-height: 100vh;
+  color: white;
+}
+
+.title {
+  margin-bottom: 20px;
+  color: #22c55e;
+}
+
+.status {
+  padding: 20px;
+  color: white;
+}
+
+.status.error {
+  color: #ef4444;
+}
+
+/* TABLE CONTAINER */
+.table-container {
+  margin-top: 20px;
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: #0f172a;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.table td {
+  padding: 12px;
+  border-top: 1px solid #1f2937;
+  color: white;
+}
+
+/* IMAGE */
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
