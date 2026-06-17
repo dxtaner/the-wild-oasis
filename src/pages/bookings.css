@@ -1,0 +1,165 @@
+.bookings {
+  padding: 32px;
+  color: white;
+}
+
+/* HEADER */
+
+.bookings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.bookings-header h1 {
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+.bookings-header p {
+  color: #94a3b8;
+}
+
+/* FILTERS */
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  border: none;
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  background: #111827;
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.filter-btn.active {
+  background: #22c55e;
+  color: white;
+}
+
+/* TABLE */
+
+.table-wrapper {
+  overflow-x: auto;
+
+  background: #111827;
+
+  border-radius: 18px;
+
+  border: 1px solid #1f2937;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+
+  padding: 18px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  background: #0f172a;
+}
+
+.table td {
+  padding: 18px;
+
+  border-top: 1px solid #1f2937;
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* CELLS */
+
+.guest {
+  font-weight: 600;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* STATUS */
+
+.status {
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
+
+.status-confirmed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-pending {
+  background: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+}
+
+.status-cancelled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* LOADING */
+
+.bookings-loading {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  border: 4px solid #1f2937;
+  border-top: 4px solid #22c55e;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+
+  margin-bottom: 14px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
