@@ -1,17 +1,29 @@
 import { useState } from "react";
+
 import { useBookings } from "../features/bookings/useBookings";
+
+import { useDeleteBooking } from "../features/bookings/useDeleteBooking";
+
+import { useUpdateBooking } from "../features/bookings/useUpdateBooking";
+
 import "./bookings.css";
 
 export default function Bookings() {
   const { data: bookings = [], isLoading } = useBookings();
 
+  const { mutate: deleteBooking } = useDeleteBooking();
+
+  const { mutate: updateBooking } = useUpdateBooking();
+
   const [filter, setFilter] = useState("all");
+
+  const [selectedBooking, setSelectedBooking] = useState(null);
 
   if (isLoading) {
     return (
       <div className="bookings-loading">
-        <div className="spinner"></div>
-        <p>Loading bookings...</p>
+        {" "}
+        <div className="spinner"></div> <p>Loading bookings...</p>{" "}
       </div>
     );
   }
@@ -23,15 +35,11 @@ export default function Bookings() {
 
   return (
     <div className="bookings">
-      {/* HEADER */}
-
-      <div className="bookings-header">
+      <div className="bookings-top">
         <div>
           <h1>📅 Bookings</h1>
-          <p>Manage hotel reservations</p>
+          <p>Manage reservations and guests</p>
         </div>
-
-        {/* FILTERS */}
 
         <div className="filters">
           <button
@@ -69,10 +77,7 @@ export default function Bookings() {
           </button>
         </div>
       </div>
-
-      {/* TABLE */}
-
-      <div className="table-wrapper">
+      <div className="table-container">
         <table className="table">
           <thead>
             <tr>
@@ -81,18 +86,23 @@ export default function Bookings() {
               <th>Dates</th>
               <th>Status</th>
               <th>Total</th>
+              <th>Actions</th>
             </tr>
           </thead>
 
           <tbody>
             {filteredBookings.map((booking) => (
               <tr key={booking.id}>
-                <td className="guest">{booking.guest_name}</td>
+                <td className="guest-name">{booking.guest_name}</td>
 
                 <td>{booking.cabin_name}</td>
 
-                <td>
-                  {booking.start_date} → {booking.end_date}
+                <td className="dates">
+                  {booking.start_date}
+
+                  <span>→</span>
+
+                  {booking.end_date}
                 </td>
 
                 <td>
@@ -102,11 +112,78 @@ export default function Bookings() {
                 </td>
 
                 <td className="price">${booking.total_price}</td>
+
+                <td>
+                  <div className="actions">
+                    <button
+                      className="confirm-btn"
+                      onClick={() =>
+                        updateBooking({
+                          id: booking.id,
+                          status: "confirmed",
+                        })
+                      }
+                    >
+                      Confirm
+                    </button>
+
+                    <button
+                      className="pending-btn"
+                      onClick={() =>
+                        updateBooking({
+                          id: booking.id,
+                          status: "pending",
+                        })
+                      }
+                    >
+                      Pending
+                    </button>
+
+                    <button
+                      className="delete-btn"
+                      onClick={() => setSelectedBooking(booking)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {selectedBooking && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Delete Booking</h2>
+
+            <p>
+              Are you sure you want to delete booking for{" "}
+              <strong>{selectedBooking.guest_name}</strong>?
+            </p>
+
+            <div className="modal-actions">
+              <button
+                className="cancel-modal-btn"
+                onClick={() => setSelectedBooking(null)}
+              >
+                Cancel
+              </button>
+
+              <button
+                className="confirm-delete-btn"
+                onClick={() => {
+                  deleteBooking(selectedBooking.id);
+
+                  setSelectedBooking(null);
+                }}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
