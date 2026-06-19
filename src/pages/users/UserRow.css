@@ -1,0 +1,121 @@
+.user-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info h4 {
+  margin-bottom: 4px;
+
+  font-size: 15px;
+}
+
+.user-info p {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.email {
+  color: #cbd5e1;
+}
+
+.role {
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  background: rgba(59, 130, 246, 0.15);
+
+  color: #3b82f6;
+}
+
+.status {
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+.status.active {
+  background: rgba(34, 197, 94, 0.15);
+
+  color: #22c55e;
+}
+
+.status.inactive {
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+}
+
+.actions {
+  display: flex;
+
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+
+  padding: 10px 14px;
+
+  border-radius: 12px;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.edit-btn {
+  background: rgba(59, 130, 246, 0.15);
+
+  color: #3b82f6;
+}
+
+.edit-btn:hover {
+  background: #3b82f6;
+
+  color: white;
+}
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+
+  color: white;
+}
