@@ -24,3 +24,15 @@ export async function createUser(newUser) {
 
   return data;
 }
+
+export async function updateUser(id, updatedUser) {
+  const { data, error } = await supabase
+    .from("users")
+    .update(updatedUser)
+    .eq("id", id)
+    .select();
+
+  if (error) throw new Error(error.message);
+
+  return data;
+}
