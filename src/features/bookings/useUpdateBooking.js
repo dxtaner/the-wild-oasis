@@ -6,7 +6,8 @@ export function useUpdateBooking() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, status }) => updateBookingStatus(id, status),
+    mutationFn: ({ id, status, total_price }) =>
+      updateBookingStatus(id, status, total_price),
 
     onSuccess: (_, variables) => {
       toast.success(`Booking marked as ${variables.status}`);
