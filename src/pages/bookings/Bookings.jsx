@@ -44,8 +44,8 @@ export default function Bookings() {
         <table className="table">
           <thead>
             <tr>
-              <th>Guest</th>
               <th>Cabin</th>
+              <th>Guest</th>
               <th>Dates</th>
               <th>Status</th>
               <th>Total</th>
