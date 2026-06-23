@@ -1,0 +1,390 @@
+.bookings-detail-container {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: #070a13;
+  color: #e2e8f0;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.bookings-header-navigation {
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-back-nav {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-back-nav:hover {
+  color: #38bdf8;
+  transform: translateX(-4px);
+}
+
+.title-section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title-section-wrapper h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.highlight-id {
+  color: #38bdf8;
+}
+
+.status-pill {
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.status-pill.status-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.status-pill.status-confirmed {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.status-pill.status-cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.modern-detail-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .modern-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modern-glass-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.modern-glass-card:hover {
+  border-color: #334155;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.modern-glass-card.highlight-border {
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: linear-gradient(135deg, #0f172a 0%, #0d1324 100%);
+}
+
+.card-header-iconic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 14px;
+}
+
+.card-header-iconic .icon {
+  font-size: 20px;
+}
+
+.card-header-iconic h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.card-body-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.field-value {
+  font-size: 16px;
+  color: #cbd5e1;
+}
+
+.field-value.text-important {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.datetime-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+.arrow-split {
+  color: #64748b;
+}
+
+.price-summary-display {
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 24px;
+  border: 1px dashed #334155;
+}
+
+.price-summary-display .price-title {
+  font-size: 13px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price-summary-display .price-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: #10b981;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.modern-checkbox-addon-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.animated-checkbox-wrapper {
+  background: rgba(30, 41, 59, 0.5);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+
+.animated-checkbox-wrapper.statement-box {
+  background: rgba(14, 165, 233, 0.03);
+  border-color: rgba(14, 165, 233, 0.15);
+}
+
+.checkbox-container-custom {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  gap: 14px;
+}
+
+.checkbox-container-custom input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark-box {
+  height: 22px;
+  width: 22px;
+  background-color: #0f172a;
+  border: 2px solid #475569;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.checkbox-container-custom:hover input ~ .checkmark-box {
+  border-color: #38bdf8;
+}
+
+.checkbox-container-custom input:checked ~ .checkmark-box {
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+.checkmark-box:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #0f172a;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container-custom input:checked ~ .checkmark-box:after {
+  display: block;
+}
+
+.checkbox-label-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checkbox-label-text .main-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.checkbox-label-text .sub-label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.statement-confirmation {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.neon-price {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.action-buttons-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action-confirm {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-action-confirm:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+}
+
+.btn-action-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.btn-action-pending:hover {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+.btn-action-cancel {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.btn-action-cancel:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.bookings-error-container {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-card {
+  text-align: center;
+  background: #0f172a;
+  border: 1px solid #ef4444;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 400px;
+}
+
+.error-card h2 {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+.error-card p {
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
