@@ -16,10 +16,13 @@ export async function deleteBooking(id) {
   if (error) throw new Error(error.message);
 }
 
-export async function updateBookingStatus(id, status) {
+export async function updateBookingStatus(id, status, total_price) {
   const { data, error } = await supabase
     .from("bookings")
-    .update({ status })
+    .update({
+      status,
+      total_price,
+    })
     .eq("id", id)
     .select();
 
