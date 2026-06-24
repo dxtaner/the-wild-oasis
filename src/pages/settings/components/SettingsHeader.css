@@ -1,0 +1,22 @@
+.settings-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 24px;
+}
+
+.settings-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-header p {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.5;
+}
