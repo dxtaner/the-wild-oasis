@@ -4,27 +4,30 @@ import "./sidebar.css";
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <h2 className="logo">🏝️ Wild Oasis</h2>
+      <div className="logo">
+        <span>🏝️</span>
+        <span>Wild Oasis</span>
+      </div>
 
       <nav className="nav">
         <NavLink to="/dashboard" className="link">
-          Home
+          <span>🏠</span> Home
         </NavLink>
 
         <NavLink to="/cabins" className="link">
-          Cabins
+          <span>⛺</span> Cabins
         </NavLink>
 
         <NavLink to="/bookings" className="link">
-          Bookings
+          <span>📅</span> Bookings
         </NavLink>
 
         <NavLink to="/users" className="link">
-          Users
+          <span>👤</span> Users
         </NavLink>
 
         <NavLink to="/settings" className="link">
-          Settings
+          <span>⚙️</span> Settings
         </NavLink>
       </nav>
     </aside>
