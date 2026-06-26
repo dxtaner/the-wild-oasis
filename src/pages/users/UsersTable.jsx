@@ -1,4 +1,3 @@
-// UsersTable.jsx
 import UserRow from "./UserRow";
 import "./UsersTable.css";
 
