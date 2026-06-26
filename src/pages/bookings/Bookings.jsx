@@ -4,6 +4,7 @@ import { useDeleteBooking } from "../../features/bookings/useDeleteBooking";
 import { useUpdateBooking } from "../../features/bookings/useUpdateBooking";
 
 import BookingFilters from "./BookingFilters";
+import BookingSort from "./BookingSort";
 import BookingRow from "./BookingRow";
 import DeleteBookingModal from "./DeleteBookingModal";
 import LoadingSpinner from "./LoadingSpinner";
@@ -16,6 +17,7 @@ export default function Bookings() {
   const { mutate: updateBooking } = useUpdateBooking();
 
   const [filter, setFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("date-desc");
   const [selectedBooking, setSelectedBooking] = useState(null);
 
   if (isLoading) return <LoadingSpinner />;
@@ -29,6 +31,21 @@ export default function Bookings() {
       ? bookings
       : bookings.filter((booking) => booking.status === filter);
 
+  const sortedBookings = [...filteredBookings].sort((a, b) => {
+    switch (sortBy) {
+      case "date-desc":
+        return new Date(b.start_date) - new Date(a.start_date);
+      case "date-asc":
+        return new Date(a.start_date) - new Date(b.start_date);
+      case "amount-desc":
+        return (b.total_price || 0) - (a.total_price || 0);
+      case "amount-asc":
+        return (a.total_price || 0) - (b.total_price || 0);
+      default:
+        return 0;
+    }
+  });
+
   return (
     <div className="bookings">
       <div className="bookings-top">
@@ -37,7 +54,11 @@ export default function Bookings() {
           <p>Manage reservations and guests</p>
         </div>
 
-        <BookingFilters currentFilter={filter} onFilterChange={setFilter} />
+        {/* Filtreleme ve Sıralama Alanı yan yana */}
+        <div className="controls-wrapper">
+          <BookingFilters currentFilter={filter} onFilterChange={setFilter} />
+          <BookingSort currentSort={sortBy} onSortChange={setSortBy} />
+        </div>
       </div>
 
       <div className="table-container">
@@ -53,7 +74,7 @@ export default function Bookings() {
             </tr>
           </thead>
           <tbody>
-            {filteredBookings.map((booking) => (
+            {sortedBookings.map((booking) => (
               <BookingRow
                 key={booking.id}
                 booking={booking}
