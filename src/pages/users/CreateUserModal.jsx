@@ -33,6 +33,14 @@ export default function CreateUserModal({
             required
           />
 
+          <input
+            type="url"
+            name="avatar_url"
+            placeholder="Avatar Image URL (e.g., https://...)"
+            value={formData.avatar_url || ""}
+            onChange={handleChange}
+          />
+
           <select name="role" value={formData.role} onChange={handleChange}>
             <option>Admin</option>
             <option>Manager</option>
