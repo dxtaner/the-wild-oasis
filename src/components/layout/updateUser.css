@@ -100,7 +100,7 @@
   transition: all 0.2s ease;
 }
 
-.form-file-input::file-selector-button:hover:not(:disabled) {
+.form-file-input:not(:disabled)::file-selector-button:hover {
   background-color: #273549;
   border-color: #475569;
 }
