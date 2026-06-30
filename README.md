@@ -10,6 +10,13 @@ Currently, key architectural modules are fully operational:
 - **Backend Infrastructure:** Integrated directly with **Supabase**, leveraging its powerful relational database and built-in secure authentication system.
 
 ---
+## 💡 Demo / Test Credentials:
+
+Email: admincs@net.com
+
+Password: admincs@net.com
+
+---
 
 ## 🚀 Features
 
